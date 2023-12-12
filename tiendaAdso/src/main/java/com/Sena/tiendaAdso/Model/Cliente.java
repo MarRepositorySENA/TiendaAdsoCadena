@@ -94,7 +94,7 @@ public class Cliente {
 	@Column(name="segundo_apellido", nullable=true,length = 20)
 	private String SegundoApellido;
 
-	@Column(name="genero", nullable=false,length = 15)
+	@Column(name="genero", nullable=true,length = 15)
 	private String Genero;
 	
 	@Column(name="fecha_nacimiento", nullable=false,length = 15)

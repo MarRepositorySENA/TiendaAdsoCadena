@@ -15,7 +15,7 @@ public class Vendedor {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
-	@Column(name="id_cliente", nullable=false, length = 36)
+	@Column(name="id_vendedor", nullable=false, length = 36)
 	private String IdVendedor;
 
 
@@ -79,167 +79,172 @@ public class Vendedor {
 	
 	@Column(name="certificaciones", nullable=false,length = 100)
 	private String Certificaciones;
+
+	//Constructor vacio
+		public Vendedor() {
+			super();
+		}
+
+		//Constructor con metodos
+		public Vendedor(String idVendedor, String tipoDocumento, String numeroDocumento, String primerNombre,
+				String segundoNombre, String primerApellido, String segundoApellido, String genero, Date fechaNacimiento,
+				String telefono, String correo, String direccion, String numeroSeguroSocial, String informacionBancaria,
+				String contactoEmergencia, String certificaciones) {
+			super();
+			this.IdVendedor = idVendedor;
+			this.TipoDocumento = tipoDocumento;
+			this.NumeroDocumento = numeroDocumento;
+			this.PrimerNombre = primerNombre;
+			this.SegundoNombre = segundoNombre;
+			this.PrimerApellido = primerApellido;
+			this.SegundoApellido = segundoApellido;
+			this.Genero = genero;
+			this.FechaNacimiento = fechaNacimiento;
+			this.Telefono = telefono;
+			this.Correo = correo;
+			this.Direccion = direccion;
+			this.NumeroSeguroSocial = numeroSeguroSocial;
+			this.InformacionBancaria = informacionBancaria;
+			this.ContactoEmergencia = contactoEmergencia;
+			this.Certificaciones = certificaciones;
+		}
+
+		//Encapsulamiento
+		public String getIdVendedor() {
+			return IdVendedor;
+		}
+
+		public void setIdVendedor(String idVendedor) {
+			this.IdVendedor = idVendedor;
+		}
+
+		public String getTipoDocumento() {
+			return TipoDocumento;
+		}
+
+		public void setTipoDocumento(String tipoDocumento) {
+			this.TipoDocumento = tipoDocumento;
+		}
+
+		public String getNumeroDocumento() {
+			return NumeroDocumento;
+		}
+
+		public void setNumeroDocumento(String numeroDocumento) {
+			this.NumeroDocumento = numeroDocumento;
+		}
+
+		public String getPrimerNombre() {
+			return PrimerNombre;
+		}
+
+		public void setPrimerNombre(String primerNombre) {
+			this.PrimerNombre = primerNombre;
+		}
+
+		public String getSegundoNombre() {
+			return SegundoNombre;
+		}
+
+		public void setSegundoNombre(String segundoNombre) {
+			this.SegundoNombre = segundoNombre;
+		}
+
+		public String getPrimerApellido() {
+			return PrimerApellido;
+		}
+
+		public void setPrimerApellido(String primerApellido) {
+			this.PrimerApellido = primerApellido;
+		}
+
+		public String getSegundoApellido() {
+			return SegundoApellido;
+		}
+
+		public void setSegundoApellido(String segundoApellido) {
+			this.SegundoApellido = segundoApellido;
+		}
+
+		public String getGenero() {
+			return Genero;
+		}
+
+		public void setGenero(String genero) {
+			this.Genero = genero;
+		}
+
+		public Date getFechaNacimiento() {
+			return FechaNacimiento;
+		}
+
+		public void setFechaNacimiento(Date fechaNacimiento) {
+			this.FechaNacimiento = fechaNacimiento;
+		}
+
+		public String getTelefono() {
+			return Telefono;
+		}
+
+		public void setTelefono(String telefono) {
+			this.Telefono = telefono;
+		}
+
+		public String getCorreo() {
+			return Correo;
+		}
+
+		public void setCorreo(String correo) {
+			this.Correo = correo;
+		}
+
+		public String getDireccion() {
+			return Direccion;
+		}
+
+		public void setDireccion(String direccion) {
+			this.Direccion = direccion;
+		}
+
+		public String getNumeroSeguroSocial() {
+			return NumeroSeguroSocial;
+		}
+
+		public void setNumeroSeguroSocial(String numeroSeguroSocial) {
+			this.NumeroSeguroSocial = numeroSeguroSocial;
+		}
+
+		public String getInformacionBancaria() {
+			return InformacionBancaria;
+		}
+
+		public void setInformacionBancaria(String informacionBancaria) {
+			this.InformacionBancaria = informacionBancaria;
+		}
+
+		public String getContactoEmergencia() {
+			return ContactoEmergencia;
+		}
+
+		public void setContactoEmergencia(String contactoEmergencia) {
+			this.ContactoEmergencia = contactoEmergencia;
+		}
+
+		public String getCertificaciones() {
+			return Certificaciones;
+		}
+
+		public void setCertificaciones(String certificaciones) {
+			this.Certificaciones = certificaciones;
+		}
+		
+		
+		
+		
+		
 	
 	
-	// Constructor vacio
-	public Vendedor() {
-		super();
-	}
-
-	// Constructor con parametros
-	public Vendedor(String idVendedor, String tipoDocumento, String numeroDocumento, String primerNombre,
-			String segundoNombre, String primerApellido, String segundoApellido, String genero, Date fechaNacimiento,
-			String telefono, String correo, String direccion, String numeroSeguroSocial, String informacionBancaria,
-			String contactoEmergencia, String certificaciones) {
-		super();
-		this.IdVendedor = idVendedor;
-		this.TipoDocumento = tipoDocumento;
-		this.NumeroDocumento = numeroDocumento;
-		this.PrimerNombre = primerNombre;
-		this.SegundoNombre = segundoNombre;
-		this.PrimerApellido = primerApellido;
-		this.SegundoApellido = segundoApellido;
-		this.Genero = genero;
-		this.FechaNacimiento = fechaNacimiento;
-		this.Telefono = telefono;
-		this.Correo = correo;
-		this.Direccion = direccion;
-		this.NumeroSeguroSocial = numeroSeguroSocial;
-		this.InformacionBancaria = informacionBancaria;
-		this.ContactoEmergencia = contactoEmergencia;
-		this.Certificaciones = certificaciones;
-	}
-
-	public String getIdVendedor() {
-		return IdVendedor;
-	}
-
-	public void setIdVendedor(String idVendedor) {
-		this.IdVendedor = idVendedor;
-	}
-
-	public String getTipoDocumento() {
-		return TipoDocumento;
-	}
-
-	public void setTipoDocumento(String tipoDocumento) {
-		this.TipoDocumento = tipoDocumento;
-	}
-
-	public String getNumeroDocumento() {
-		return NumeroDocumento;
-	}
-
-	public void setNumeroDocumento(String numeroDocumento) {
-		this.NumeroDocumento = numeroDocumento;
-	}
-
-	public String getPrimerNombre() {
-		return PrimerNombre;
-	}
-
-	public void setPrimerNombre(String primerNombre) {
-		this.PrimerNombre = primerNombre;
-	}
-
-	public String getSegundoNombre() {
-		return SegundoNombre;
-	}
-
-	public void setSegundoNombre(String segundoNombre) {
-		this.SegundoNombre = segundoNombre;
-	}
-
-	public String getPrimerApellido() {
-		return PrimerApellido;
-	}
-
-	public void setPrimerApellido(String primerApellido) {
-		this.PrimerApellido = primerApellido;
-	}
-
-	public String getSegundoApellido() {
-		return SegundoApellido;
-	}
-
-	public void setSegundoApellido(String segundoApellido) {
-		this.SegundoApellido = segundoApellido;
-	}
-
-	public String getGenero() {
-		return Genero;
-	}
-
-	public void setGenero(String genero) {
-		this.Genero = genero;
-	}
-
-	public Date getFechaNacimiento() {
-		return FechaNacimiento;
-	}
-
-	public void setFechaNacimiento(Date fechaNacimiento) {
-		this.FechaNacimiento = fechaNacimiento;
-	}
-
-	public String getTelefono() {
-		return Telefono;
-	}
-
-	public void setTelefono(String telefono) {
-		this.Telefono = telefono;
-	}
-
-	public String getCorreo() {
-		return Correo;
-	}
-
-	public void setCorreo(String correo) {
-		this.Correo = correo;
-	}
-
-	public String getDireccion() {
-		return Direccion;
-	}
-
-	public void setDireccion(String direccion) {
-		this.Direccion = direccion;
-	}
-
-	public String getNumeroSeguroSocial() {
-		return NumeroSeguroSocial;
-	}
-
-	public void setNumeroSeguroSocial(String numeroSeguroSocial) {
-		this.NumeroSeguroSocial = numeroSeguroSocial;
-	}
-
-	public String getInformacionBancaria() {
-		return InformacionBancaria;
-	}
-
-	public void setInformacionBancaria(String informacionBancaria) {
-		this.InformacionBancaria = informacionBancaria;
-	}
-
-	public String getContactoEmergencia() {
-		return ContactoEmergencia;
-	}
-
-	public void setContactoEmergencia(String contactoEmergencia) {
-		this.ContactoEmergencia = contactoEmergencia;
-	}
-
-	public String getCertificaciones() {
-		return Certificaciones;
-	}
-
-	public void setCertificaciones(String certificaciones) {
-		this.Certificaciones = certificaciones;
-	}
 	
 	
-	
-
 	
 }
