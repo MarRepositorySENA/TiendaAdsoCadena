@@ -8,84 +8,91 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
-@Entity(name="detalle_venta")
+@Entity(name = "detalle_venta")
 public class DetalleVenta {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
-	@Column(name="id_detalle_venta ", nullable=false, length = 36)
-	private String IdDetalleVenta ;
-	
+	@Column(name = "id_detalle_venta ", nullable = false, length = 36)
+	private String IdDetalleVenta;
+
 	@ManyToOne
-	@JoinColumn (name="id_factura_cliente")
-	private FacturaCliente facturaCliente;
-	
+	@JoinColumn(name = "id_factura_cliente")
+	private FacturaCliente IdFacturaCliente;
+
 	@ManyToOne
-	@JoinColumn (name="id_venta")
-	private Venta venta;
-	
+	@JoinColumn(name = "id_venta")
+	private Venta IdVenta;
+
 	@ManyToOne
-	@JoinColumn (name="id_producto")
-	private Producto producto;
-	
-	@Column(name="cantidad", nullable=false, length = 20)
-	private int  Cantidad;
-	
-	@Column(name="precio_unitario", nullable=false, length = 20)
+	@JoinColumn(name = "id_producto")
+	private Producto IdProducto;
+
+	@Column(name = "cantidad", nullable = false, length = 20)
+	private int Cantidad;
+
+	@Column(name = "precio_unitario", nullable = false, length = 20)
 	private Double PrecioUnitario;
-	
-	@Column(name="subtotal", nullable=false, length = 20)
+
+	@Column(name = "subtotal", nullable = false, length = 20)
 	private Double Subtotal;
-	
-	@Column(name="metodo_pago", nullable=false, length = 20)
+
+	@Column(name = "metodo_pago", nullable = false, length = 20)
 	private String MetodoPago;
-	
-	@Column(name="descuento_aplicado", nullable=false, length = 20)
+
+	@Column(name = "descuento_aplicado", nullable = false, length = 20)
 	private Double DescuentoAplicado;
 
-	
-	//Constructor vacio
+	// Constructor vacio
 	public DetalleVenta() {
 		super();
 	}
 
-	//Constructor con metodos
-	public DetalleVenta(String idDetalleVenta, Venta venta, Producto producto, int cantidad, Double precioUnitario,
-			Double subtotal, String metodoPago, Double descuentoAplicado) {
+	// Constructor con metodos
+	public DetalleVenta(String idDetalleVenta, FacturaCliente idFacturaCliente, Venta idVenta, Producto idProducto,
+			int cantidad, Double precioUnitario, Double subtotal, String metodoPago, Double descuentoAplicado) {
 		super();
-		this.IdDetalleVenta = idDetalleVenta;
-		this.venta = venta;
-		this.producto = producto;
-		this.Cantidad = cantidad;
-		this.PrecioUnitario = precioUnitario;
-		this.Subtotal = subtotal;
-		this.MetodoPago = metodoPago;
-		this.DescuentoAplicado = descuentoAplicado;
+		IdDetalleVenta = idDetalleVenta;
+		IdFacturaCliente = idFacturaCliente;
+		IdVenta = idVenta;
+		IdProducto = idProducto;
+		Cantidad = cantidad;
+		PrecioUnitario = precioUnitario;
+		Subtotal = subtotal;
+		MetodoPago = metodoPago;
+		DescuentoAplicado = descuentoAplicado;
 	}
 
-	//Encapsulamiento
 	public String getIdDetalleVenta() {
 		return IdDetalleVenta;
 	}
 
 	public void setIdDetalleVenta(String idDetalleVenta) {
-		this.IdDetalleVenta = idDetalleVenta;
+		IdDetalleVenta = idDetalleVenta;
 	}
 
-	public Venta getVenta() {
-		return venta;
+	public FacturaCliente getIdFacturaCliente() {
+		return IdFacturaCliente;
 	}
 
-	public void setVenta(Venta venta) {
-		this.venta = venta;
+	public void setIdFacturaCliente(FacturaCliente idFacturaCliente) {
+		IdFacturaCliente = idFacturaCliente;
 	}
 
-	public Producto getProducto() {
-		return producto;
+	public Venta getIdVenta() {
+		return IdVenta;
 	}
 
-	public void setProducto(Producto producto) {
-		this.producto = producto;
+	public void setIdVenta(Venta idVenta) {
+		IdVenta = idVenta;
+	}
+
+	public Producto getIdProducto() {
+		return IdProducto;
+	}
+
+	public void setIdProducto(Producto idProducto) {
+		IdProducto = idProducto;
 	}
 
 	public int getCantidad() {
@@ -93,7 +100,7 @@ public class DetalleVenta {
 	}
 
 	public void setCantidad(int cantidad) {
-		this.Cantidad = cantidad;
+		Cantidad = cantidad;
 	}
 
 	public Double getPrecioUnitario() {
@@ -101,7 +108,7 @@ public class DetalleVenta {
 	}
 
 	public void setPrecioUnitario(Double precioUnitario) {
-		this.PrecioUnitario = precioUnitario;
+		PrecioUnitario = precioUnitario;
 	}
 
 	public Double getSubtotal() {
@@ -109,7 +116,7 @@ public class DetalleVenta {
 	}
 
 	public void setSubtotal(Double subtotal) {
-		this.Subtotal = subtotal;
+		Subtotal = subtotal;
 	}
 
 	public String getMetodoPago() {
@@ -117,7 +124,7 @@ public class DetalleVenta {
 	}
 
 	public void setMetodoPago(String metodoPago) {
-		this.MetodoPago = metodoPago;
+		MetodoPago = metodoPago;
 	}
 
 	public Double getDescuentoAplicado() {
@@ -125,16 +132,7 @@ public class DetalleVenta {
 	}
 
 	public void setDescuentoAplicado(Double descuentoAplicado) {
-		this.DescuentoAplicado = descuentoAplicado;
+		DescuentoAplicado = descuentoAplicado;
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

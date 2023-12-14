@@ -21,7 +21,7 @@ import jakarta.persistence.Id;
 //@Entity: Indica que la clase es una entidad
 @Entity(name = "cliente")
 public class Cliente {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
 	@Column(name = "id_cliente", nullable = false, length = 36)
@@ -65,31 +65,30 @@ public class Cliente {
 	}
 
 	// Constructor con parametros
-	public Cliente(String IdCliente, String TipoDocumento, String NumeroDocumento, String PrimerNombre,
-			String SegundoNombre, String PrimerApellido, String SegundoApellido, String Genero, Date FechaNacimiento,
-			String Telefono, String Correo, String Direccion) {
+	public Cliente(String idCliente, String tipoDocumento, String numeroDocumento, String primerNombre,
+			String segundoNombre, String primerApellido, String segundoApellido, String genero, Date fechaNacimiento,
+			String telefono, String correo, String direccion) {
 		super();
-		this.IdCliente = IdCliente;
-		this.TipoDocumento = TipoDocumento;
-		this.NumeroDocumento = NumeroDocumento;
-		this.PrimerNombre = PrimerNombre;
-		this.SegundoNombre = SegundoNombre;
-		this.PrimerApellido = PrimerApellido;
-		this.SegundoApellido = SegundoApellido;
-		this.Genero = Genero;
-		this.FechaNacimiento = FechaNacimiento;
-		this.Telefono = Telefono;
-		this.Correo = Correo;
-		this.Direccion = Direccion;
+		IdCliente = idCliente;
+		TipoDocumento = tipoDocumento;
+		NumeroDocumento = numeroDocumento;
+		PrimerNombre = primerNombre;
+		SegundoNombre = segundoNombre;
+		PrimerApellido = primerApellido;
+		SegundoApellido = segundoApellido;
+		Genero = genero;
+		FechaNacimiento = fechaNacimiento;
+		Telefono = telefono;
+		Correo = correo;
+		Direccion = direccion;
 	}
-
 
 	public String getIdCliente() {
 		return IdCliente;
 	}
 
 	public void setIdCliente(String idCliente) {
-		this.IdCliente = idCliente;
+		IdCliente = idCliente;
 	}
 
 	public String getTipoDocumento() {
@@ -97,7 +96,7 @@ public class Cliente {
 	}
 
 	public void setTipoDocumento(String tipoDocumento) {
-		this.TipoDocumento = tipoDocumento;
+		TipoDocumento = tipoDocumento;
 	}
 
 	public String getNumeroDocumento() {
@@ -105,7 +104,7 @@ public class Cliente {
 	}
 
 	public void setNumeroDocumento(String numeroDocumento) {
-		this.NumeroDocumento = numeroDocumento;
+		NumeroDocumento = numeroDocumento;
 	}
 
 	public String getPrimerNombre() {
@@ -113,7 +112,7 @@ public class Cliente {
 	}
 
 	public void setPrimerNombre(String primerNombre) {
-		this.PrimerNombre = primerNombre;
+		PrimerNombre = primerNombre;
 	}
 
 	public String getSegundoNombre() {
@@ -121,7 +120,7 @@ public class Cliente {
 	}
 
 	public void setSegundoNombre(String segundoNombre) {
-		this.SegundoNombre = segundoNombre;
+		SegundoNombre = segundoNombre;
 	}
 
 	public String getPrimerApellido() {
@@ -129,7 +128,7 @@ public class Cliente {
 	}
 
 	public void setPrimerApellido(String primerApellido) {
-		this.PrimerApellido = primerApellido;
+		PrimerApellido = primerApellido;
 	}
 
 	public String getSegundoApellido() {
@@ -137,15 +136,15 @@ public class Cliente {
 	}
 
 	public void setSegundoApellido(String segundoApellido) {
-		this.SegundoApellido = segundoApellido;
+		SegundoApellido = segundoApellido;
 	}
 
 	public String getGenero() {
-		return SegundoApellido;
+		return Genero;
 	}
 
 	public void setGenero(String genero) {
-		this.Genero = genero;
+		Genero = genero;
 	}
 
 	public Date getFechaNacimiento() {
@@ -153,7 +152,7 @@ public class Cliente {
 	}
 
 	public void setFechaNacimiento(Date fechaNacimiento) {
-		this.FechaNacimiento = fechaNacimiento;
+		FechaNacimiento = fechaNacimiento;
 	}
 
 	public String getTelefono() {
@@ -161,7 +160,7 @@ public class Cliente {
 	}
 
 	public void setTelefono(String telefono) {
-		this.Telefono = telefono;
+		Telefono = telefono;
 	}
 
 	public String getCorreo() {
@@ -169,7 +168,7 @@ public class Cliente {
 	}
 
 	public void setCorreo(String correo) {
-		this.Correo = correo;
+		Correo = correo;
 	}
 
 	public String getDireccion() {
@@ -177,7 +176,7 @@ public class Cliente {
 	}
 
 	public void setDireccion(String direccion) {
-		this.Direccion = direccion;
+		Direccion = direccion;
 	}
 
 }

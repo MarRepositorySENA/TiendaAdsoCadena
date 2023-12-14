@@ -8,14 +8,16 @@ import com.Sena.tiendaAdso.Model.Cliente;
 public interface IClienteService {
 
 	/*
-	 * Definir los metodos del CRUD
-	 * Create
+	 * Definir los metodos del CRUD Create
 	 * 
 	 */
-	
-	public String save (Cliente cliente);
-	public List <Cliente> findAll();
-	public Optional <Cliente> findOne(String id);
-	public int delete (String id);
-	
+
+	public String save(Cliente cliente);
+
+	public List<Cliente> findAll();
+
+	public Optional<Cliente> findOne(String id);
+
+	public int delete(String id);
+
 }

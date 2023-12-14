@@ -11,37 +11,34 @@ import com.Sena.tiendaAdso.InterfaceService.IClienteService;
 import com.Sena.tiendaAdso.Model.Cliente;
 
 @Service
-public class ClienteService  implements IClienteService{
+public class ClienteService implements IClienteService {
 
 	@Autowired
 	private ICliente data;
-	
-	
+
 	@Override
 	public String save(Cliente cliente) {
 		data.save(cliente);
 		return cliente.getIdCliente();
-		
+
 	}
 
 	@Override
 	public List<Cliente> findAll() {
-		List<Cliente> listaCliente = (List<Cliente>)  data.findAll();
+		List<Cliente> listaCliente = (List<Cliente>) data.findAll();
 		return listaCliente;
 	}
 
 	@Override
-	public Optional<Cliente> findOne(String idcliente) {
-		Optional <Cliente> Cliente= data.findById(idcliente);
+	public Optional<Cliente> findOne(String idCliente) {
+		Optional<Cliente> Cliente = data.findById(idCliente);
 		return Cliente;
 	}
 
 	@Override
-	public int delete(String idcliente) {
-		data.deleteById(idcliente);
+	public int delete(String idCliente) {
+		data.deleteById(idCliente);
 		return 1;
 	}
 
-	
-	
 }

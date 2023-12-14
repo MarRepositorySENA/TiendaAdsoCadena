@@ -20,7 +20,7 @@ public class DetalleCompra {
 
 	@ManyToOne
 	@JoinColumn(name = "id_producto")
-	private Producto producto;
+	private Producto IdProducto;
 
 	@ManyToOne
 	@JoinColumn(name = "id_factura_proveedor")
@@ -64,35 +64,34 @@ public class DetalleCompra {
 			Double impuesto, Date fechaCompra, Date fechaEntrega, String estadoCompra, Double cantidad,
 			Double precioUnitario, Double subtotal, String metodoPago) {
 		super();
-		this.IdDetalleCompra = idDetalleCompra;
-		this.producto = producto;
-		this.IdFacturaProveedor = idFacturaProveedor;
-		this.Descuento = descuento;
-		this.Impuesto = impuesto;
-		this.FechaCompra = fechaCompra;
-		this.FechaEntrega = fechaEntrega;
-		this.EstadoCompra = estadoCompra;
-		this.Cantidad = cantidad;
-		this.PrecioUnitario = precioUnitario;
-		this.Subtotal = subtotal;
-		this.MetodoPago = metodoPago;
+		IdDetalleCompra = idDetalleCompra;
+		IdProducto = producto;
+		IdFacturaProveedor = idFacturaProveedor;
+		Descuento = descuento;
+		Impuesto = impuesto;
+		FechaCompra = fechaCompra;
+		FechaEntrega = fechaEntrega;
+		EstadoCompra = estadoCompra;
+		Cantidad = cantidad;
+		PrecioUnitario = precioUnitario;
+		Subtotal = subtotal;
+		MetodoPago = metodoPago;
 	}
 
-	// Encapsulamiento
 	public String getIdDetalleCompra() {
 		return IdDetalleCompra;
 	}
 
 	public void setIdDetalleCompra(String idDetalleCompra) {
-		this.IdDetalleCompra = idDetalleCompra;
+		IdDetalleCompra = idDetalleCompra;
 	}
 
-	public Producto getProducto() {
-		return producto;
+	public Producto getIdProducto() {
+		return IdProducto;
 	}
 
-	public void setProducto(Producto producto) {
-		this.producto = producto;
+	public void setIdProducto(Producto idProducto) {
+		IdProducto = idProducto;
 	}
 
 	public Proveedor getIdFacturaProveedor() {
@@ -100,7 +99,7 @@ public class DetalleCompra {
 	}
 
 	public void setIdFacturaProveedor(Proveedor idFacturaProveedor) {
-		this.IdFacturaProveedor = idFacturaProveedor;
+		IdFacturaProveedor = idFacturaProveedor;
 	}
 
 	public Double getDescuento() {
@@ -108,7 +107,7 @@ public class DetalleCompra {
 	}
 
 	public void setDescuento(Double descuento) {
-		this.Descuento = descuento;
+		Descuento = descuento;
 	}
 
 	public Double getImpuesto() {
@@ -116,7 +115,7 @@ public class DetalleCompra {
 	}
 
 	public void setImpuesto(Double impuesto) {
-		this.Impuesto = impuesto;
+		Impuesto = impuesto;
 	}
 
 	public Date getFechaCompra() {
@@ -124,7 +123,7 @@ public class DetalleCompra {
 	}
 
 	public void setFechaCompra(Date fechaCompra) {
-		this.FechaCompra = fechaCompra;
+		FechaCompra = fechaCompra;
 	}
 
 	public Date getFechaEntrega() {
@@ -132,7 +131,7 @@ public class DetalleCompra {
 	}
 
 	public void setFechaEntrega(Date fechaEntrega) {
-		this.FechaEntrega = fechaEntrega;
+		FechaEntrega = fechaEntrega;
 	}
 
 	public String getEstadoCompra() {
@@ -140,7 +139,7 @@ public class DetalleCompra {
 	}
 
 	public void setEstadoCompra(String estadoCompra) {
-		this.EstadoCompra = estadoCompra;
+		EstadoCompra = estadoCompra;
 	}
 
 	public Double getCantidad() {
@@ -148,7 +147,7 @@ public class DetalleCompra {
 	}
 
 	public void setCantidad(Double cantidad) {
-		this.Cantidad = cantidad;
+		Cantidad = cantidad;
 	}
 
 	public Double getPrecioUnitario() {
@@ -156,7 +155,7 @@ public class DetalleCompra {
 	}
 
 	public void setPrecioUnitario(Double precioUnitario) {
-		this.PrecioUnitario = precioUnitario;
+		PrecioUnitario = precioUnitario;
 	}
 
 	public Double getSubtotal() {
@@ -164,7 +163,7 @@ public class DetalleCompra {
 	}
 
 	public void setSubtotal(Double subtotal) {
-		this.Subtotal = subtotal;
+		Subtotal = subtotal;
 	}
 
 	public String getMetodoPago() {
@@ -172,7 +171,7 @@ public class DetalleCompra {
 	}
 
 	public void setMetodoPago(String metodoPago) {
-		this.MetodoPago = metodoPago;
+		MetodoPago = metodoPago;
 	}
 
 }

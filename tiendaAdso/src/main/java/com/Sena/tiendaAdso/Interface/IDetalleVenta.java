@@ -6,8 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.Sena.tiendaAdso.Model.DetalleVenta;
 
 @Repository
-public interface IDetalleVenta extends CrudRepository<DetalleVenta, String>{
+public interface IDetalleVenta extends CrudRepository<DetalleVenta, String> {
 
-	
-	
 }

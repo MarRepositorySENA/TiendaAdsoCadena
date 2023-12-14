@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.Sena.tiendaAdso.Model.Proveedor;
 
 @Repository
-public interface IProveedor extends CrudRepository<Proveedor, String>{
-	
+public interface IProveedor extends CrudRepository<Proveedor, String> {
 
 }

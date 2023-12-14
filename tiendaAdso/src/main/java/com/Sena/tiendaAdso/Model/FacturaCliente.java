@@ -8,41 +8,41 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
-@Entity(name="factura_cliente")
+@Entity(name = "factura_cliente")
 public class FacturaCliente {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
-	@Column(name="id_factura_cliente ", nullable=false, length = 36)
-	private String IdFacturaCliente ;
-	
+	@Column(name = "id_factura_cliente ", nullable = false, length = 36)
+	private String IdFacturaCliente;
+
 	@ManyToOne
-	@JoinColumn (name="id_cliente")
+	@JoinColumn(name = "id_cliente")
 	private Cliente cliente;
-	
+
 	@ManyToOne
-	@JoinColumn (name="id_producto")
+	@JoinColumn(name = "id_producto")
 	private Vendedor vendedor;
-	
+
 	@ManyToOne
-	@JoinColumn (name="id_detalle_venta")
+	@JoinColumn(name = "id_detalle_venta")
 	private DetalleVenta detalleVenta;
 
-	//Constructor vacio
+	// Constructor vacio
 	public FacturaCliente() {
 		super();
 	}
 
-	//Constructor con metodos
+	// Constructor con metodos
 	public FacturaCliente(String idFacturaCliente, Cliente cliente, Vendedor vendedor, DetalleVenta detalleVenta) {
 		super();
-		this.IdFacturaCliente = idFacturaCliente;
+		IdFacturaCliente = idFacturaCliente;
 		this.cliente = cliente;
 		this.vendedor = vendedor;
 		this.detalleVenta = detalleVenta;
 	}
 
-	//Encapsulamiento
+	// Encapsulamiento
 	public String getIdFacturaCliente() {
 		return IdFacturaCliente;
 	}
@@ -74,10 +74,7 @@ public class FacturaCliente {
 	public void setDetalleVenta(DetalleVenta detalleVenta) {
 		this.detalleVenta = detalleVenta;
 	}
+
 	
-	
-	
-	
-	
-	
+
 }

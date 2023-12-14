@@ -16,47 +16,43 @@ import org.springframework.web.bind.annotation.RestController;
 import com.Sena.tiendaAdso.InterfaceService.IClienteService;
 import com.Sena.tiendaAdso.Model.Cliente;
 
-@RequestMapping ("/api/v1/clientes")
+@RequestMapping("/api/v1/clientes")
 @RestController
-@CrossOrigin 
+@CrossOrigin
 //Anotacion: permite utilizar la configuration de cors
 public class ClienteController {
-	
+
 	@Autowired
 	private IClienteService ClienteService;
 	/*
 	 * 
 	 */
 
-	
 	// permite ingresar datos
-	@PostMapping("/") 
-	public ResponseEntity<Object> save(
-			@ModelAttribute("Cliente") Cliente cliente
-			){
-		ClienteService.save (cliente);
+	@PostMapping("/")
+	public ResponseEntity<Object> save(@ModelAttribute("Cliente") Cliente cliente) {
+		ClienteService.save(cliente);
 		return new ResponseEntity<>(cliente, HttpStatus.OK);
 	}
-	
-	
+
 	@GetMapping("/")
-	public ResponseEntity<Object> findAll(){
-		var ListaClientes= ClienteService.findAll();
-		return new ResponseEntity <>(ListaClientes, HttpStatus.OK);
-		}
-	
-	
-	@GetMapping("/{id}")
-	public ResponseEntity<Object> findOne(@PathVariable String id){
-		var cliente= ClienteService.findOne(id);
-		return new ResponseEntity <> (cliente,HttpStatus.OK);
+	public ResponseEntity<Object> findAll() {
+		var ListaClientes = ClienteService.findAll();
+		return new ResponseEntity<>(ListaClientes, HttpStatus.OK);
 	}
-	
+
+	@GetMapping("/{id}")
+	public ResponseEntity<Object> findOne(@PathVariable String id) {
+		var cliente = ClienteService.findOne(id);
+		return new ResponseEntity<>(cliente, HttpStatus.OK);
+	}
+
 	@PutMapping("/{id}")
 
-	public ResponseEntity<Object> update(@PathVariable String id, @ModelAttribute("Cliente") Cliente clienteUpdate){
+	public ResponseEntity<Object> update(@PathVariable String id,
+			@ModelAttribute("Cliente") Cliente clienteUpdate) {
 
-		var cliente=ClienteService.findOne(id).get();
+		var cliente = ClienteService.findOne(id).get();
 
 		if (cliente != null) {
 
@@ -67,15 +63,15 @@ public class ClienteController {
 			cliente.setTipoDocumento(clienteUpdate.getTipoDocumento());
 
 			cliente.setPrimerNombre(clienteUpdate.getPrimerNombre());
-			
+
 			cliente.setSegundoNombre(clienteUpdate.getSegundoNombre());
 
 			cliente.setPrimerApellido(clienteUpdate.getPrimerApellido());
-			
+
 			cliente.setSegundoApellido(clienteUpdate.getSegundoApellido());
-			
+
 			cliente.setGenero(clienteUpdate.getGenero());
-			
+
 			cliente.setFechaNacimiento(clienteUpdate.getFechaNacimiento());
 
 			cliente.setTelefono(clienteUpdate.getTelefono());
@@ -84,35 +80,28 @@ public class ClienteController {
 
 			cliente.setDireccion(clienteUpdate.getDireccion());
 
-			
-
-			
-
 			ClienteService.save(cliente);
 
-			return new ResponseEntity<>(cliente,HttpStatus.OK);
+			return new ResponseEntity<>(cliente, HttpStatus.OK);
 
 		}
 
 		else {
 
-		return new ResponseEntity<>("Error cliente no encontrado",HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>("Error cliente no encontrado", HttpStatus.BAD_REQUEST);
 
 		}
 
 	}
-	
-	
-	
+
 	@DeleteMapping("/{id}")
 
-	public ResponseEntity<Object> delete(@PathVariable String id){
+	public ResponseEntity<Object> delete(@PathVariable String id) {
 
 		ClienteService.delete(id);
 
-		return new ResponseEntity<>("Registro Eliminado",HttpStatus.OK);
+		return new ResponseEntity<>("Registro Eliminado", HttpStatus.OK);
 
 	}
-	
-	
+
 }

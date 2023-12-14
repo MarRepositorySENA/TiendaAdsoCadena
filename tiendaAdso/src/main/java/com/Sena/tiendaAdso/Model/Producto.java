@@ -8,71 +8,70 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity(name="producto")
+@Entity(name = "producto")
 public class Producto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
-	@Column(name="id_producto ", nullable=false, length = 36)
-	private String IdProducto ;
-	
-	@Column(name="nombre_producto", nullable=false, length = 20)
+	@Column(name = "id_producto ", nullable = false, length = 36)
+	private String IdProducto;
+
+	@Column(name = "nombre_producto", nullable = false, length = 20)
 	private String NombreProducto;
-	
-	@Column(name="marca_Producto", nullable=false, length = 20)
+
+	@Column(name = "marca_Producto", nullable = false, length = 20)
 	private String MarcaProducto;
-	
-	@Column(name="precio_producto", nullable=false, length = 15)
+
+	@Column(name = "precio_producto", nullable = false, length = 15)
 	private Double PrecioProducto;
-	
-	@Column(name="descripcion_producto", nullable=true, length = 25)
+
+	@Column(name = "descripcion_producto", nullable = true, length = 25)
 	private String DescripcionProducto;
-	
-	@Column(name="categoria_Producto", nullable=false, length = 15)
+
+	@Column(name = "categoria_Producto", nullable = false, length = 15)
 	private String CategoriaProducto;
-	
-	@Column(name="fecha_creacion_registro", nullable=false, length = 15)
+
+	@Column(name = "fecha_creacion_registro", nullable = false, length = 15)
 	private Date FechaCreacionRegistro;
-	
-	@Column(name="fecha_actualizacion", nullable=false, length = 15)
+
+	@Column(name = "fecha_actualizacion", nullable = false, length = 15)
 	private Date FechaActualizacion;
-	
-	@Column(name="cantidad_stock", nullable=false, length = 15)
+
+	@Column(name = "cantidad_stock", nullable = false, length = 15)
 	private Double CantidadStock;
-	
-	@Column(name="peso_producto", nullable=false, length = 15)
+
+	@Column(name = "peso_producto", nullable = false, length = 15)
 	private Double PesoProducto;
 
-	//Constructor vacio
+	// Constructor vacio
 	public Producto() {
 		super();
 	}
 
-	//Constructor con metodos
+	// Constructor con metodos
 	public Producto(String idProducto, String nombreProducto, String marcaProducto, Double precioProducto,
 			String descripcionProducto, String categoriaProducto, Date fechaCreacionRegistro, Date fechaActualizacion,
 			Double cantidadStock, Double pesoProducto) {
 		super();
-		this.IdProducto = idProducto;
-		this.NombreProducto = nombreProducto;
-		this.MarcaProducto = marcaProducto;
-		this.PrecioProducto = precioProducto;
-		this.DescripcionProducto = descripcionProducto;
-		this.CategoriaProducto = categoriaProducto;
-		this.FechaCreacionRegistro = fechaCreacionRegistro;
-		this.FechaActualizacion = fechaActualizacion;
-		this.CantidadStock = cantidadStock;
-		this.PesoProducto = pesoProducto;
+		IdProducto = idProducto;
+		NombreProducto = nombreProducto;
+		MarcaProducto = marcaProducto;
+		PrecioProducto = precioProducto;
+		DescripcionProducto = descripcionProducto;
+		CategoriaProducto = categoriaProducto;
+		FechaCreacionRegistro = fechaCreacionRegistro;
+		FechaActualizacion = fechaActualizacion;
+		CantidadStock = cantidadStock;
+		PesoProducto = pesoProducto;
 	}
 
-	
-	//Encapsulamiento
-	public String getCodigoBarras() {
+	// Encapsulamiento
+	public String getIdProducto() {
 		return IdProducto;
 	}
 
-	public void setCodigoBarras(String codigoBarras) {
-		this.IdProducto = codigoBarras;
+	public void setIdProducto(String idProducto) {
+		IdProducto = idProducto;
 	}
 
 	public String getNombreProducto() {
@@ -80,7 +79,7 @@ public class Producto {
 	}
 
 	public void setNombreProducto(String nombreProducto) {
-		this.NombreProducto = nombreProducto;
+		NombreProducto = nombreProducto;
 	}
 
 	public String getMarcaProducto() {
@@ -88,7 +87,7 @@ public class Producto {
 	}
 
 	public void setMarcaProducto(String marcaProducto) {
-		this.MarcaProducto = marcaProducto;
+		MarcaProducto = marcaProducto;
 	}
 
 	public Double getPrecioProducto() {
@@ -96,7 +95,7 @@ public class Producto {
 	}
 
 	public void setPrecioProducto(Double precioProducto) {
-		this.PrecioProducto = precioProducto;
+		PrecioProducto = precioProducto;
 	}
 
 	public String getDescripcionProducto() {
@@ -104,7 +103,7 @@ public class Producto {
 	}
 
 	public void setDescripcionProducto(String descripcionProducto) {
-		this.DescripcionProducto = descripcionProducto;
+		DescripcionProducto = descripcionProducto;
 	}
 
 	public String getCategoriaProducto() {
@@ -112,7 +111,7 @@ public class Producto {
 	}
 
 	public void setCategoriaProducto(String categoriaProducto) {
-		this.CategoriaProducto = categoriaProducto;
+		CategoriaProducto = categoriaProducto;
 	}
 
 	public Date getFechaCreacionRegistro() {
@@ -120,7 +119,7 @@ public class Producto {
 	}
 
 	public void setFechaCreacionRegistro(Date fechaCreacionRegistro) {
-		this.FechaCreacionRegistro = fechaCreacionRegistro;
+		FechaCreacionRegistro = fechaCreacionRegistro;
 	}
 
 	public Date getFechaActualizacion() {
@@ -128,7 +127,7 @@ public class Producto {
 	}
 
 	public void setFechaActualizacion(Date fechaActualizacion) {
-		this.FechaActualizacion = fechaActualizacion;
+		FechaActualizacion = fechaActualizacion;
 	}
 
 	public Double getCantidadStock() {
@@ -136,7 +135,7 @@ public class Producto {
 	}
 
 	public void setCantidadStock(Double cantidadStock) {
-		this.CantidadStock = cantidadStock;
+		CantidadStock = cantidadStock;
 	}
 
 	public Double getPesoProducto() {
@@ -144,11 +143,7 @@ public class Producto {
 	}
 
 	public void setPesoProducto(Double pesoProducto) {
-		this.PesoProducto = pesoProducto;
+		PesoProducto = pesoProducto;
 	}
-	
-	
-	
-	
-	
+
 }

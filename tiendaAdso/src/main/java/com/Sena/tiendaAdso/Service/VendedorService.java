@@ -10,38 +10,34 @@ import com.Sena.tiendaAdso.Interface.IVendedor;
 import com.Sena.tiendaAdso.InterfaceService.IVendedorService;
 import com.Sena.tiendaAdso.Model.Vendedor;
 
-
 @Service
 public class VendedorService implements IVendedorService {
 
 	@Autowired
 	private IVendedor data;
+
 	@Override
-	public String save(Vendedor Vendedor) {
-		data.save(Vendedor);
-		return Vendedor.getIdVendedor();
+	public String save(Vendedor vendedor) {
+		data.save(vendedor);
+		return vendedor.getIdVendedor();
 	}
 
 	@Override
 	public List<Vendedor> findAll() {
-		List<Vendedor> listaVendedor= (List<Vendedor>) data.findAll();
+		List<Vendedor> listaVendedor = (List<Vendedor>) data.findAll();
 		return listaVendedor;
 	}
 
 	@Override
-	public Optional<Vendedor> findOne(String idvendedor) {
-		Optional<Vendedor> Vendedor= data.findById(idvendedor);
+	public Optional<Vendedor> findOne(String idVendedor) {
+		Optional<Vendedor> Vendedor = data.findById(idVendedor);
 		return Vendedor;
 	}
 
 	@Override
-	public int delete(String idvendedor) {
-		data.deleteById(idvendedor);
+	public int delete(String idVendedor) {
+		data.deleteById(idVendedor);
 		return 1;
-		
-		
+
 	}
 }
-
-	
-
